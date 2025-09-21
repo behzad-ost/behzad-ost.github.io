@@ -110,7 +110,7 @@ body {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 8px;
 }
 
 .sidebar-nav a {
@@ -184,6 +184,22 @@ section {
 
 .half-section h2 {
     margin-bottom: 15px;
+}
+
+.roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.role-title {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    display: inline-block;
 }
 
 .half-section .timeline {
