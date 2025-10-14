@@ -791,6 +791,45 @@ section h2 {
     margin-top: 10px;
 }
 
+/* Resume Section Styles */
+.resume {
+    padding: 20px 40px !important;
+}
+
+.resume h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.resume-download {
+    text-align: center;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.download-btn:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.download-btn i {
+    font-size: 1em;
+}
+
 /* Footer Styles */
 footer {
     background-color: var(--primary-color);
