@@ -665,7 +665,131 @@ section h2 {
 }
 
 .skill-items {
-    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.skill-badge i {
+    font-size: 1.1em;
+}
+
+.skill-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Programming Languages */
+.skill-badge.python {
+    background-color: #3776AB;
+}
+
+.skill-badge.javascript {
+    background-color: #F7DF1E;
+    color: #000;
+}
+
+.skill-badge.java {
+    background-color: #ED8B00;
+}
+
+.skill-badge.cpp {
+    background-color: #00599C;
+}
+
+/* Machine Learning */
+.skill-badge.tensorflow {
+    background-color: #FF6F00;
+}
+
+.skill-badge.pytorch {
+    background-color: #EE4C2C;
+}
+
+.skill-badge.keras {
+    background-color: #D00000;
+}
+
+.skill-badge.sklearn {
+    background-color: #F7931E;
+}
+
+/* Data Stores */
+.skill-badge.postgresql {
+    background-color: #316192;
+}
+
+.skill-badge.mongodb {
+    background-color: #4EA94B;
+}
+
+.skill-badge.redis {
+    background-color: #DC382D;
+}
+
+.skill-badge.pinecone {
+    background-color: #000000;
+}
+
+/* Orchestration */
+.skill-badge.kubernetes {
+    background-color: #326CE5;
+}
+
+.skill-badge.docker {
+    background-color: #2496ED;
+}
+
+.skill-badge.github {
+    background-color: #2088FF;
+}
+
+.skill-badge.mlflow {
+    background-color: #0194E2;
+}
+
+/* Cloud Services */
+.skill-badge.aws {
+    background-color: #232F3E;
+}
+
+.skill-badge.gcp {
+    background-color: #4285F4;
+}
+
+.skill-badge.terraform {
+    background-color: #7B42BC;
+}
+
+/* Monitoring */
+.skill-badge.prometheus {
+    background-color: #E6522C;
+}
+
+.skill-badge.grafana {
+    background-color: #F46800;
+}
+
+.skill-badge.graylog {
+    background-color: #FF3633;
+}
+
+.skill-badge.jaeger {
+    background-color: #60D0E4;
+    color: #000;
 }
 
 /* Publications Styles */
