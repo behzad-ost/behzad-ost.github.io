@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://behzad-ost.github.io/sitemap.xml
+
