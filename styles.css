@@ -30,7 +30,7 @@ body {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--primary-color);
+    background: linear-gradient(180deg, #33475b 0%, var(--primary-color) 55%, #202b37 100%);
     color: white;
     padding: 30px 20px;
     overflow-y: auto;
@@ -136,18 +136,16 @@ body {
     transform: translateX(10px);
 }
 
+.sidebar-nav a.active {
+    background-color: var(--secondary-color);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
 /* Main Content Styles */
 .main-content {
     margin-left: var(--sidebar-width);
     width: calc(100% - var(--sidebar-width));
     padding: 40px;
-}
-
-/* Section Row Styles */
-.section-row {
-    display: flex;
-    gap: 30px;
-    margin-bottom: 30px;
 }
 
 /* Section Styles */
@@ -157,33 +155,6 @@ section {
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.half-section {
-    flex: 1;
-    margin-bottom: 0;
-    padding: 20px;
-    max-height: 500px;
-    overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: var(--secondary-color) transparent;
-}
-
-.half-section::-webkit-scrollbar {
-    width: 6px;
-}
-
-.half-section::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.half-section::-webkit-scrollbar-thumb {
-    background-color: var(--secondary-color);
-    border-radius: 3px;
-}
-
-.half-section h2 {
-    margin-bottom: 15px;
 }
 
 .roles {
@@ -202,31 +173,40 @@ section {
     display: inline-block;
 }
 
-.half-section .timeline {
-    margin: 10px auto;
-}
-
-.half-section .timeline-item {
-    padding: 5px 30px;
-    margin: 10px 0;
-}
-
-.half-section .timeline::after {
-    top: 10px;
-    bottom: 10px;
-}
-
 section h2 {
     color: var(--primary-color);
     margin-bottom: 30px;
     text-align: center;
     font-size: 2em;
+    position: relative;
+    padding-bottom: 18px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--secondary-color), #5dade2);
 }
 
 /* Summary Section Styles */
+.summary .container {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.summary .roles {
+    justify-content: center;
+}
+
 .summary p {
-    font-size: 1.3em;
-    line-height: 1.7;
+    font-size: 1.15em;
+    line-height: 1.8;
 }
 
 /* Timeline Styles */
@@ -619,18 +599,21 @@ section h2 {
 }
 
 .course-tag {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: #eaf3fb;
+    color: var(--primary-color);
+    border: 1px solid #d3e6f5;
     padding: 4px 10px;
     border-radius: 15px;
-    font-size: 1em;
+    font-size: 0.9em;
     font-weight: 500;
     display: inline-block;
     transition: all 0.3s ease;
 }
 
 .course-tag:hover {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -875,6 +858,10 @@ section h2 {
     transform: translateY(-2px);
 }
 
+.paper-link .venue-mobile {
+    display: none;
+}
+
 /* Honors Styles */
 .honors-list {
     display: grid;
@@ -992,11 +979,6 @@ footer {
 @media (max-width: 768px) {
     body {
         flex-direction: column;
-    }
-    
-    .section-row {
-        flex-direction: column;
-        gap: 20px;
     }
     
     .sidebar {

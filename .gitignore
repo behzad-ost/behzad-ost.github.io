@@ -1,0 +1,5 @@
+cv/archive/
+cv/pdfs/*.log
+cv/*.tex
+cv/*.cls
+cv/build*

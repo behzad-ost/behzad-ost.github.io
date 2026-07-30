@@ -170,8 +170,8 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <div class="section-row">
-            <section id="summary" class="summary half-section">
+        <section id="summary" class="summary">
+            <div class="container">
                 <h2>Professional Summary</h2>
                 <div class="roles">
                     <span class="role-title">Ph.D. Researcher</span>
@@ -183,9 +183,11 @@
                     I am a <strong>Ph.D. candidate</strong> at Florida International University, working as a Research Assistant at the <strong>Systems Security Lab (SecLab)</strong> under the supervision of Dr. Amin Kharraz. My research focuses on utilizing <strong>data-driven and machine learning techniques</strong> to detect emerging threats in web applications,  such as analyzing <strong>LLM-based browser agents</strong>, developing models to distinguish human behavior from automated agents, and vulnerability analysis. Beyond research, I bring hands-on experience as a <strong>Software and Site Reliability Engineer</strong>, with a strong background in cloud infrastructure, Linux administration, and DevOps practices,  bridging the gap between academic research and production engineering.
                    <!-- I serve as a reviewer and program committee member for conferences such as RAID, WWW, and DIMVA, and  -->
                 </p>
-            </section>
+            </div>
+        </section>
 
-            <section id="education" class="education half-section">
+        <section id="education" class="education">
+            <div class="container">
                 <h2>Education</h2>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -210,8 +212,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
 
         <!-- Experience Section -->
         <section id="experience" class="experience">
@@ -267,7 +269,7 @@
 
                 <div class="experience-card" itemscope itemtype="https://schema.org/WorkExperience">
                     <div class="experience-header">
-                        <img src="https://www.ia-grp.com/wp-content/themes/image-analysis/img/logonew.png" alt="Image Analysis Group Logo" class="company-logo" loading="lazy" width="120" height="40">
+                        <img src="https://www.ia-grp.com/wp-content/uploads/2025/10/iag-main-logo.svg" alt="Image Analysis Group Logo" class="company-logo" loading="lazy" width="120" height="40">
                         <div class="experience-title">
                             <div class="role" itemprop="roleName">DevOps Consultant</div>
                             <div class="company" itemprop="worksFor"><a href="https://www.ia-grp.com/trial-solutions/image-management-platform/" target="_blank" rel="noopener noreferrer">Image Analysis Group</a></div>
@@ -386,23 +388,13 @@
             <div class="publication-list" itemprop="publications">
                 <div class="publication-item">
                     <div class="publication-content">
-                        <h3>Cracking the Web: Analyzing LLM-Based Browsers and Automated Solvers in the Web</h3>
-                        <p class="authors">B. Ousat, L. Rampersaud, D. Bailey, N. Turkmen, S. Ulugac, A. Kharraz</p>
+                        <h3>Broken Gates: Re-evaluating Web Bot Defenses in the Age of LLM Agents</h3>
+                        <p class="authors">B. Ousat, L. Rampersaud, D. Bailey, N. Turkmen, A. Kharraz</p>
                     </div>
                     <div class="publication-meta">
-                        <p class="venue">To be Submitted to IEEE S&P (S&P), 2026</p>
-                    </div>
-                </div>
-                
-                <div class="publication-item">
-                    <div class="publication-content">
-                        <h3>WebGuard: Detecting Evasive Web Scanners via a Multi‑Modal Forensics Engine</h3>
-                        <p class="authors">B. Ousat, M. Shariatnasab, E. Schafir, F. Shirani, A. Kharraz</p>
-                    </div>
-                    <div class="publication-meta">
-                        <p class="venue">Submitted to RAID, 2025</p>
-                        <a href="https://arxiv.org/abs/2412.07005" target="_blank" rel="noopener noreferrer" class="paper-link" aria-label="View publication on arXiv">
-                            <span class="venue-mobile">Submitted to RAID, 2025</span>
+                        <p class="venue">Preprint, 2026</p>
+                        <a href="https://arxiv.org/abs/2607.18659" target="_blank" rel="noopener noreferrer" class="paper-link" aria-label="View publication on arXiv">
+                            <span class="venue-mobile">Preprint, 2026</span>
                             View on arXiv
                         </a>
                     </div>
@@ -410,13 +402,27 @@
 
                 <div class="publication-item">
                     <div class="publication-content">
-                        <h3>Open Source, Open Threats? Investigating Security Challenges in Open-Source Software</h3>
+                        <h3>Vulnerability Evolution and the Promise of Automated Gatekeeping in Open-Source Software</h3>
                         <p class="authors">S.A. Akhavani*, B. Ousat*, A. Kharraz</p>
                     </div>
                     <div class="publication-meta">
-                        <p class="venue">Submitted to ACSAC, 2025</p>
+                        <p class="venue">International Symposium on Research in Attacks, Intrusions and Defenses (RAID), 2026</p>
                         <a href="https://arxiv.org/abs/2506.12995" target="_blank" rel="noopener noreferrer" class="paper-link" aria-label="View publication on arXiv">
-                            <span class="venue-mobile">Submitted to ACSAC, 2025</span>
+                            <span class="venue-mobile">RAID, 2026</span>
+                            View on arXiv
+                        </a>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-content">
+                        <h3>In-Application Defense Against Evasive Web Scans through Behavioral Analysis</h3>
+                        <p class="authors">B. Ousat, M. Shariatnasab, E. Schafir, F. Shirani, A. Kharraz</p>
+                    </div>
+                    <div class="publication-meta">
+                        <p class="venue">Preprint, 2025</p>
+                        <a href="https://arxiv.org/abs/2412.07005" target="_blank" rel="noopener noreferrer" class="paper-link" aria-label="View publication on arXiv">
+                            <span class="venue-mobile">Preprint, 2025</span>
                             View on arXiv
                         </a>
                     </div>
@@ -429,6 +435,10 @@
                     </div>
                     <div class="publication-meta">
                         <p class="venue">Submitted to IEEE TPAMI, 2024</p>
+                        <a href="https://arxiv.org/pdf/2307.15180" target="_blank" rel="noopener noreferrer" class="paper-link" aria-label="View publication on arXiv">
+                            <span class="venue-mobile">Submitted to IEEE TPAMI, 2024</span>
+                            View on arXiv
+                        </a>
                     </div>
                 </div>
 
@@ -487,6 +497,26 @@
                         </a>
                     </div>
                 </div>
+
+                <div class="publication-item">
+                    <div class="publication-content">
+                        <h3>Evaluating Security Checks Against Malicious Payloads with Forged Signatures</h3>
+                        <p class="authors">L. Rampersaud, B. Ousat, S. A. Akhavani, J. Zandi, S. Uluagac, A. Kharraz</p>
+                    </div>
+                    <div class="publication-meta">
+                        <p class="venue">IEEE IEMCON, 2025</p>
+                    </div>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-content">
+                        <h3>On the Effectiveness of End-Users' Data Backup Practices Against Data Corruption</h3>
+                        <p class="authors">L. Rampersaud, B. Ousat, C. Brown, S. Uluagac, A. Kharraz</p>
+                    </div>
+                    <div class="publication-meta">
+                        <p class="venue">IEEE IEMCON, 2025</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -498,7 +528,7 @@
             <div class="honors-list">
                 <div class="honor-item">
                     <h3>Conference Reviewer</h3>
-                    <p>RAID, DIMVA (20-25% Acceptance Rate)</p>
+                    <p>RAID, DIMVA (20-25% Acceptance Rate), MadWeb</p>
                     <p class="year">2024, 2025</p>
                 </div>
 
@@ -506,6 +536,12 @@
                     <h3>Journal Reviewer</h3>
                     <p>IEEE Transactions on Information Forensics & Security (TIFS, IF 8.0)</p>
                     <p class="year">2024</p>
+                </div>
+
+                <div class="honor-item">
+                    <h3>Dissertation Year Fellowship Award</h3>
+                    <p>Florida International University</p>
+                    <p class="year">2026</p>
                 </div>
 
                 <div class="honor-item">
@@ -707,7 +743,7 @@
         <div class="container">
             <h2>Resume</h2>
             <div class="resume-download">
-                <a href="Behzad Ousat CV - June 26.pdf" download class="download-btn">
+                <a href="cv/pdfs/cv-applied-scientist.pdf" download="Behzad Ousat CV.pdf" class="download-btn">
                     <i class="fas fa-download"></i> Download
                 </a>
             </div>
@@ -720,5 +756,30 @@
             </div>
         </footer>
     </main>
+
+    <script>
+        (function () {
+            var navLinks = document.querySelectorAll('.sidebar-nav a');
+            var linkByTarget = new Map();
+            navLinks.forEach(function (link) {
+                linkByTarget.set(link.getAttribute('href').slice(1), link);
+            });
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    var link = linkByTarget.get(entry.target.id);
+                    if (!link) return;
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(function (l) { l.classList.remove('active'); });
+                        link.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+            document.querySelectorAll('main section[id]').forEach(function (section) {
+                observer.observe(section);
+            });
+        })();
+    </script>
 </body>
 </html>
