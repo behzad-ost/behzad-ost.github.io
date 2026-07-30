@@ -148,6 +148,14 @@ body {
     padding: 40px;
 }
 
+/* Section Row Styles */
+.section-row {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    align-items: stretch;
+}
+
 /* Section Styles */
 section {
     padding: 40px;
@@ -155,6 +163,18 @@ section {
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.half-section {
+    flex: 1;
+    margin-bottom: 0;
+    padding: 28px 24px;
+    min-width: 0;
+}
+
+.half-section h2 {
+    margin-bottom: 18px;
+    font-size: 1.6em;
 }
 
 .roles {
@@ -195,18 +215,40 @@ section h2::after {
 }
 
 /* Summary Section Styles */
-.summary .container {
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-.summary .roles {
-    justify-content: center;
-}
-
 .summary p {
-    font-size: 1.15em;
-    line-height: 1.8;
+    font-size: 1.05em;
+    line-height: 1.7;
+}
+
+/* Compact left timeline inside side-by-side education column */
+.half-section .timeline {
+    max-width: none;
+    margin: 10px 0 0;
+    padding-left: 20px;
+}
+
+.half-section .timeline::after {
+    left: 0;
+    margin-left: 0;
+    top: 8px;
+    bottom: 8px;
+}
+
+.half-section .timeline-item,
+.half-section .timeline-item:nth-child(even) {
+    width: 100%;
+    left: 0;
+    padding: 8px 0 8px 28px;
+    margin: 8px 0;
+}
+
+.half-section .timeline-item::after,
+.half-section .timeline-item:nth-child(even)::after {
+    left: -8px;
+    right: auto;
+    width: 14px;
+    height: 14px;
+    top: 14px;
 }
 
 /* Timeline Styles */
@@ -979,6 +1021,15 @@ footer {
 @media (max-width: 768px) {
     body {
         flex-direction: column;
+    }
+
+    .section-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .half-section {
+        margin-bottom: 0;
     }
     
     .sidebar {
