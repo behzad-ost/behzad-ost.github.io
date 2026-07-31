@@ -107,7 +107,7 @@ address {
     gap: 22px;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 48px 24px 60px;
+    padding: 36px 24px 36px;
     opacity: 0;
     transform: translateY(14px);
     animation: shellIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
@@ -134,11 +134,11 @@ address {
    ======================================== */
 .sidebar {
     position: sticky;
-    top: 48px;
+    top: 36px;
     width: var(--sidebar-width);
     flex-shrink: 0;
     padding: 28px 22px;
-    max-height: calc(100vh - 96px);
+    max-height: calc(100vh - 72px);
     overflow-y: auto;
     z-index: 10;
 }
@@ -317,7 +317,6 @@ address {
     min-width: 0;
     position: relative;
     padding: 32px 36px 28px;
-    min-height: 640px;
 }
 
 /* Navbar */
@@ -446,16 +445,26 @@ address {
     height: 36px;
 }
 
-/* About */
+/* About — keep dense so the panel fits without a stray scrollbar */
+#about .page-title {
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+}
+
+.main:has(#about.active) .site-footer {
+    margin-top: 22px;
+    padding-top: 14px;
+}
+
 .about-text {
-    margin-bottom: 36px;
+    margin-bottom: 22px;
 }
 
 .roles {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
 .role-chip {
@@ -471,6 +480,7 @@ address {
 .about-text p {
     color: var(--text-muted);
     max-width: 68ch;
+    line-height: 1.55;
 }
 
 .about-text strong {
@@ -478,16 +488,20 @@ address {
     font-weight: 600;
 }
 
+.service .section-title {
+    margin-bottom: 12px;
+}
+
 .service-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .service-item {
     display: flex;
-    gap: 14px;
-    padding: 20px;
+    gap: 12px;
+    padding: 14px 16px;
     background: var(--bg-panel-2);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
@@ -501,28 +515,28 @@ address {
 }
 
 .service-icon-box {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
     display: grid;
     place-items: center;
     border-radius: 10px;
     background: var(--accent-soft);
     color: var(--accent);
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .service-item-title {
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .service-item-text {
-    font-size: 0.88rem;
+    font-size: 0.84rem;
     color: var(--text-muted);
-    line-height: 1.55;
+    line-height: 1.45;
 }
 
 /* Resume */
