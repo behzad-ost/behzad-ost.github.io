@@ -374,18 +374,14 @@ address {
     to { transform: scaleX(1); }
 }
 
-/* Pages */
+/* Pages — CSS-only hide so tab content stays in the HTML for crawlers */
 .page {
     display: none;
-    animation: pageIn 0.35s ease;
 }
 
 .page.active {
     display: block;
-}
-
-.page[hidden] {
-    display: none !important;
+    animation: pageIn 0.35s ease;
 }
 
 @keyframes pageIn {

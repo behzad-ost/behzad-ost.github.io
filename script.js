@@ -8,28 +8,41 @@
     var filterBtns = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
     var projectItems = Array.prototype.slice.call(document.querySelectorAll(".project-item"));
 
-    function setTab(tabId) {
+    var tabTitles = {
+        about: "Behzad Ousat | ML & Security Engineer, Ph.D. Candidate",
+        resume: "Resume | Behzad Ousat",
+        projects: "Projects | Behzad Ousat",
+        publications: "Publications | Behzad Ousat",
+        skills: "Skills | Behzad Ousat"
+    };
+
+    function setTab(tabId, options) {
+        options = options || {};
+
         navLinks.forEach(function (link) {
             var isActive = link.getAttribute("data-tab") === tabId;
             link.classList.toggle("active", isActive);
             link.setAttribute("aria-selected", isActive ? "true" : "false");
+            link.setAttribute("tabindex", isActive ? "0" : "-1");
         });
 
         pages.forEach(function (page) {
             var isActive = page.getAttribute("data-page") === tabId;
             page.classList.toggle("active", isActive);
-            if (isActive) {
-                page.removeAttribute("hidden");
-            } else {
-                page.setAttribute("hidden", "");
-            }
+            page.setAttribute("aria-hidden", isActive ? "false" : "true");
         });
 
-        if (history.replaceState) {
+        if (tabTitles[tabId]) {
+            document.title = tabTitles[tabId];
+        }
+
+        if (!options.skipHash && history.replaceState) {
             history.replaceState(null, "", "#" + tabId);
         }
 
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (!options.skipScroll) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
     }
 
     function initTabs() {
@@ -63,14 +76,21 @@
             });
         });
 
-        var hash = window.location.hash.replace("#", "");
         var validTabs = navLinks.map(function (link) {
             return link.getAttribute("data-tab");
         });
 
-        if (validTabs.indexOf(hash) !== -1) {
-            setTab(hash);
+        function applyHash() {
+            var hash = window.location.hash.replace("#", "");
+            if (validTabs.indexOf(hash) !== -1) {
+                setTab(hash, { skipHash: true, skipScroll: true });
+            } else {
+                setTab("about", { skipHash: true, skipScroll: true });
+            }
         }
+
+        applyHash();
+        window.addEventListener("hashchange", applyHash);
     }
 
     function initSidebar() {
