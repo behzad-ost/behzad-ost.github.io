@@ -78,23 +78,120 @@ address {
 }
 
 /* ========================================
-   Ambient background
+   Ambient background — aurora mesh + noise
    ======================================== */
 .ambient {
     position: fixed;
     inset: 0;
     z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
     background:
-        radial-gradient(ellipse 60% 50% at 15% 20%, rgba(201, 162, 39, 0.12), transparent 55%),
-        radial-gradient(ellipse 50% 45% at 85% 75%, rgba(90, 70, 40, 0.25), transparent 50%),
-        radial-gradient(ellipse 40% 35% at 60% 10%, rgba(40, 55, 50, 0.35), transparent 45%),
+        radial-gradient(ellipse 80% 60% at 50% 0%, #1a1612 0%, var(--bg-deep) 55%),
         var(--bg-deep);
-    animation: ambientShift 18s ease-in-out infinite alternate;
 }
 
-@keyframes ambientShift {
-    from { filter: hue-rotate(0deg) brightness(1); }
-    to { filter: hue-rotate(8deg) brightness(1.05); }
+.ambient-aurora {
+    position: absolute;
+    inset: -20%;
+    filter: blur(60px) saturate(1.15);
+}
+
+.orb {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    will-change: transform, opacity;
+    mix-blend-mode: screen;
+}
+
+.orb-a {
+    width: 52vw;
+    height: 52vw;
+    min-width: 420px;
+    min-height: 420px;
+    left: -8%;
+    top: -12%;
+    background: radial-gradient(circle, rgba(201, 162, 39, 0.38) 0%, rgba(201, 162, 39, 0) 68%);
+    animation: orbDriftA 22s ease-in-out infinite alternate;
+}
+
+.orb-b {
+    width: 48vw;
+    height: 48vw;
+    min-width: 380px;
+    min-height: 380px;
+    right: -10%;
+    top: 18%;
+    background: radial-gradient(circle, rgba(56, 110, 98, 0.42) 0%, rgba(56, 110, 98, 0) 70%);
+    animation: orbDriftB 26s ease-in-out infinite alternate;
+}
+
+.orb-c {
+    width: 44vw;
+    height: 44vw;
+    min-width: 360px;
+    min-height: 360px;
+    left: 28%;
+    bottom: -18%;
+    background: radial-gradient(circle, rgba(166, 92, 48, 0.34) 0%, rgba(166, 92, 48, 0) 68%);
+    animation: orbDriftC 24s ease-in-out infinite alternate;
+}
+
+.orb-d {
+    width: 36vw;
+    height: 36vw;
+    min-width: 280px;
+    min-height: 280px;
+    left: 55%;
+    top: -8%;
+    background: radial-gradient(circle, rgba(120, 90, 40, 0.28) 0%, rgba(120, 90, 40, 0) 72%);
+    animation: orbDriftD 20s ease-in-out infinite alternate;
+}
+
+@keyframes orbDriftA {
+    from { transform: translate(0, 0) scale(1); opacity: 0.85; }
+    to { transform: translate(12%, 18%) scale(1.12); opacity: 1; }
+}
+
+@keyframes orbDriftB {
+    from { transform: translate(0, 0) scale(1.05); opacity: 0.75; }
+    to { transform: translate(-14%, -10%) scale(1); opacity: 1; }
+}
+
+@keyframes orbDriftC {
+    from { transform: translate(0, 0) scale(1); opacity: 0.7; }
+    to { transform: translate(-10%, -16%) scale(1.15); opacity: 0.95; }
+}
+
+@keyframes orbDriftD {
+    from { transform: translate(0, 0) scale(0.95); opacity: 0.65; }
+    to { transform: translate(-8%, 14%) scale(1.1); opacity: 0.9; }
+}
+
+/* Soft spotlight behind the floating panels */
+.ambient-spotlight {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 50% 42%, rgba(232, 220, 190, 0.07) 0%, transparent 58%),
+        radial-gradient(ellipse 45% 35% at 50% 48%, rgba(201, 162, 39, 0.08) 0%, transparent 50%);
+}
+
+/* Film-grain / noise overlay */
+.ambient-noise {
+    position: absolute;
+    inset: 0;
+    opacity: 0.055;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 180px 180px;
+}
+
+.ambient-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 75% 70% at 50% 45%, transparent 35%, rgba(10, 8, 6, 0.55) 100%);
 }
 
 /* ========================================
@@ -1268,5 +1365,10 @@ address {
     .app {
         opacity: 1;
         transform: none;
+    }
+
+    .orb {
+        animation: none !important;
+        will-change: auto;
     }
 }
