@@ -1,5 +1,18 @@
 cv/archive/
-cv/pdfs/*.log
 cv/*.tex
 cv/*.cls
 cv/build*
+
+# LaTeX leftovers from local compiles (never commit)
+cv/**/*.aux
+cv/**/*.log
+cv/**/*.out
+cv/**/*.synctex.gz
+cv/**/*.fls
+cv/**/*.fdb_latexmk
+cv/*.pdf
+cv/academic/*.pdf
+cv/pdfs/*-preview*.png
+cv/pdfs/*.pdf
+!cv/pdfs/Behzad Ousat CV - Sep 26.pdf
+cv/academic/

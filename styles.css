@@ -1245,6 +1245,10 @@ address {
         display: none;
     }
 
+    .publication-meta.no-link .venue {
+        display: block;
+    }
+
     .paper-link {
         width: 100%;
         text-align: center;
